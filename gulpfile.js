@@ -7,6 +7,7 @@ var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var beeper = require('beeper');
+var concat = require('gulp-concat');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -36,20 +37,31 @@ function hbs(done) {
 }
 
 function css(done) {
-    var processors = [
-        easyimport,
-        colorFunction(),
-        autoprefixer(),
-        cssnano()
-    ];
-
-    pump([
-        src('assets/css/*.css', {sourcemaps: true}),
-        postcss(processors),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
+    const tailwindcss = require('tailwindcss')
+    return src('./assets/css/**/*')
+        .pipe(postcss([
+            tailwindcss('./tailwind.config.js'),
+            require('autoprefixer')
+        ]))
+        .pipe(concat({ path: 'style.css' }))
+        .pipe(dest('./assets/built/'))
 }
+
+// function css(done) {
+//     var processors = [
+//         easyimport,
+//         colorFunction(),
+//         autoprefixer(),
+//         cssnano()
+//     ];
+
+//     pump([
+//         src('assets/css/*.css', {sourcemaps: true}),
+//         postcss(processors),
+//         dest('assets/built/', {sourcemaps: '.'}),
+//         livereload()
+//     ], handleError(done));
+// }
 
 function js(done) {
     pump([
@@ -76,7 +88,7 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const cssWatcher = () => watch('assets/css/**', css);
+const cssWatcher = () => watch(['assets/css/**', './tailwind.config.js'], css);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
 const watcher = parallel(cssWatcher, hbsWatcher);
 const build = series(css, js);

@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Nunito+Sans&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "built/style.css"}}" />
 
     <title>{{meta_title}}</title>
 
@@ -13,44 +15,34 @@
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
 
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}} font-merriweather bg-offwhite text-gray-600 leading-8">
 <div class="gh-viewport">
 
-<header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
 
-        <div class="gh-head-brand">
-            <a class="gh-head-logo" href="{{@site.url}}">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </a>
-            <a class="gh-burger" role="button">
-                <div class="gh-burger-box">
-                    <div class="gh-burger-inner"></div>
-                </div>
-            </a>
-        </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{#if @site.facebook}}
-                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+<header id="gh-head" class="gh-head flex justify-between items-stretch mb-16 md:mb-24">
+    <div class="page-header--left">
+        <a href="{{ @site.url }}" title="{{ @site.title }}" class="gh-head-logo">
+            <div class="logobox bg-gray-800 p-4 text-gray-100">
+                <svg class="fill-current w-6 md:w-10" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
+                </svg>
             </div>
+        </a>
+    </div>
+    <div class="page-header--right">
+        <div class="nav-trigger bg-white py-4 px-4 md:px-6 flex items-center h-full">
+            <svg class="w-6" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H44V3H0V0ZM0 11H27V14H0V11ZM35 22H0V25H35V22Z" fill="#646679" />
+            </svg>
+            <span class="hidden md:inline md:pl-3 text-gray-600 uppercase font-nunito font-semibold">MENU</span>
         </div>
-    </nav>
+    </div>
 </header>
 
-<main class="gh-main">
+{{ navigation }}
+
+
+<main class="gh-main container max-w-960 mx-auto">
 
     {{{body}}}
     {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
