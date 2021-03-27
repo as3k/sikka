@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" class="dark">
+<html lang="{{@site.locale}}" class="light">
 <head>
 
     <meta charset="utf-8" />
@@ -38,12 +38,9 @@
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </svg>
         </div>
-        <div class="nav-trigger bg-white dark:bg-gray-700 dark:text-gray-300 py-4 px-4 md:px-6 flex items-center h-full">
-            <svg class="fill-current w-6" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H44V3H0V0ZM0 11H27V14H0V11ZM35 22H0V25H35V22Z" />
-            </svg>
-            <span class="hidden md:inline md:pl-3 uppercase font-nunito font-semibold">MENU</span>
-        </div>
+        <nav class="navigation">
+            {{ navigation }}
+        </nav>
     </div>
 </header>
 
@@ -57,8 +54,8 @@
 
 </main>
 
-<footer class="gh-foot">
-    <div class="gh-container">
+<footer class="gh-foot py-8">
+    <div class="gh-container container border-t-2 border-nord4 pt-4">
         <div class="gh-foot-menu">
             {{navigation}}
         </div>

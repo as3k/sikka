@@ -1,3 +1,5 @@
+#ghost-portal-root { @apply hidden; }
+
 .dark img {
 
     filter: none;
@@ -41,7 +43,19 @@
 
 .gh-content figcaption { @apply mt-4 pl-4 text-sm italic border-l-2 border-nord7; }
 
-.gh-content pre { @apply p-4 bg-nord3 rounded-lg overflow-scroll text-nord6; }
+.gh-content code { display: inherit; }
+.gh-content pre,
+.gh-content code {
+    @apply p-4 bg-nord3 rounded-lg overflow-scroll text-nord6;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.gh-content pre::-webkit-scrollbar,
+.gh-content code::-webkit-scrollbar {
+  display: none;
+}
 
 .gh-content ul { @apply list-disc my-10 leading-9; }
 .gh-content ul li { @apply pl-8; }
