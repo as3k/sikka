@@ -5,7 +5,7 @@ Re-usable card for linking to posts
 <article class="gh-card {{post_class}} mb-24 md:mb-32">
     <a class="gh-card-link flex flex-col items-center text-center" href="{{url}}">
         <div class="card-title mb-10">
-            <h2 class="gh-card-title font-playfair font-extrabold text-5xl mb-4">{{title}}</h2>
+            <h2 class="gh-card-title font-playfair font-extrabold text-5xl mb-4 text-gray-900 dark:text-offwhite">{{title}}</h2>
             <span class="gh-card-meta font-nunito uppercase text-semibold tracking-wide text-xs text-gray-400">
                 {{ primary_tag.name }} |
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
@@ -14,7 +14,7 @@ Re-usable card for linking to posts
             </span>
         </div>
         {{#if feature_image}}
-            <img class="gh-card-image w-full mb-8"
+            <img class="gh-card-image w-full mb-16"
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
@@ -26,7 +26,7 @@ Re-usable card for linking to posts
         {{/if}}
         <div class="gh-card-content px-24">
             <p class="text-lg mb-8">{{excerpt}}</p>
-            <button class="border border-gray-800 px-4 py-2 font-nunito font-bold uppercase">Continue Reading</button>
+            <button class="border border-gray-800 dark:border-gray-400 px-4 py-2 font-nunito font-bold uppercase">Continue Reading</button>
         </div>
     </a>
 </article>

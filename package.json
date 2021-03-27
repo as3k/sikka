@@ -47,6 +47,7 @@
         "postcss": "^8.2.8",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "3.0.0",
+        "tailwind-nord": "^1.2.0",
         "tailwindcss": "^2.0.4"
     },
     "browserslist": [
@@ -75,6 +76,5 @@
             }
         }
     },
-    "dependencies": {
-    }
+    "dependencies": {}
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" class="dark">
 <head>
 
     <meta charset="utf-8" />
@@ -15,26 +15,34 @@
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
 
 </head>
-<body class="{{body_class}} font-merriweather bg-offwhite text-gray-600 leading-8">
+<body class="{{body_class}} font-merriweather bg-offwhite dark:bg-nord00 text-nord0 dark:text-nord4 leading-8">
 <div class="gh-viewport">
 
 
 <header id="gh-head" class="gh-head flex justify-between items-stretch mb-16 md:mb-24">
     <div class="page-header--left">
         <a href="{{ @site.url }}" title="{{ @site.title }}" class="gh-head-logo">
-            <div class="logobox bg-gray-800 p-4 text-gray-100">
+            <div class="logobox bg-nord0 dark:bg-nord6 p-4 text-nord6 dark:text-nord10">
                 <svg class="fill-current w-6 md:w-10" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
                 </svg>
             </div>
         </a>
     </div>
-    <div class="page-header--right">
-        <div class="nav-trigger bg-white py-4 px-4 md:px-6 flex items-center h-full">
-            <svg class="w-6" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H44V3H0V0ZM0 11H27V14H0V11ZM35 22H0V25H35V22Z" fill="#646679" />
+    <div class="page-header--right flex items-center">
+        <div class="gh-dark-mode hidden px-4 md:px-6 py-4 text-nord10 dark:text-nord13">
+            <svg class="sun fill-current w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
-            <span class="hidden md:inline md:pl-3 text-gray-600 uppercase font-nunito font-semibold">MENU</span>
+            <svg class="moon fill-current w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+        </div>
+        <div class="nav-trigger bg-white dark:bg-gray-700 dark:text-gray-300 py-4 px-4 md:px-6 flex items-center h-full">
+            <svg class="fill-current w-6" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H44V3H0V0ZM0 11H27V14H0V11ZM35 22H0V25H35V22Z" />
+            </svg>
+            <span class="hidden md:inline md:pl-3 uppercase font-nunito font-semibold">MENU</span>
         </div>
     </div>
 </header>
@@ -75,10 +83,28 @@
 
 <script>
 $(document).ready(function () {
+    function toggleDMIcons() {
+        if ( $('html').hasClass('dark') ) {
+            $('.sun').show()
+            $('.moon').hide()
+        } else {
+            $('.sun').hide()
+            $('.moon').show()
+        }
+    }
+
     // Mobile Menu Trigger
-    $('.gh-burger').click(function () {
+    $('.gh-burger').click(() => {
         $('body').toggleClass('gh-head-open');
     });
+
+    toggleDMIcons()
+
+    // Dark Mode Trigger
+    $('.gh-dark-mode').click(() => {
+        $('html').toggleClass('dark')
+        toggleDMIcons()
+    })
 });
 </script>
 

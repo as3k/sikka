@@ -1,0 +1,59 @@
+.dark img {
+
+    filter: none;
+    -webkit-filter: grayscale(30%) brightness(95%);
+    -moz-filter:    grayscale(30%) brightness(95%);
+    -ms-filter:     grayscale(30%) brightness(95%);
+    -o-filter:      grayscale(30%) brightness(95%);
+
+}
+
+.gh-content hr {
+    @apply border-nord3;
+    opacity: .5;
+}
+.dark .gh-content hr { @apply border-nord6 mx-24 }
+.gh-strong { @apply mb-2 font-bold; }
+
+.gh-content > :not(.kg-image-card) { @apply md:px-24; }
+.gh-excerpt { @apply md:px-24; }
+
+.gh-content > * { @apply mb-8; }
+
+.gh-content h1,
+.gh-content h2,
+.gh-content h3,
+.gh-content h4 {
+    @apply text-nord0 font-playfair
+}
+
+.gh-content h1 { @apply text-4xl mt-16; }
+.gh-content h2 { @apply text-3xl mt-10; }
+.gh-content h3 { @apply text-2xl; }
+
+
+.dark .gh-content h1,
+.dark .gh-content h2,
+.dark .gh-content h3,
+.dark .gh-content h4 {
+    @apply text-nord6
+}
+
+.gh-content figcaption { @apply mt-4 pl-4 text-sm italic border-l-2 border-nord7; }
+
+.gh-content pre { @apply p-4 bg-nord3 rounded-lg overflow-scroll text-nord6; }
+
+.gh-content ul { @apply list-disc my-10 leading-9; }
+.gh-content ul li { @apply pl-8; }
+
+.kg-bookmark-container { @apply rounded overflow-hidden; }
+
+.kg-bookmark-content { @apply p-4 bg-nord1 rounded-t-md; }
+.kg-bookmark-thumbnail { @apply overflow-hidden rounded-b-md; }
+
+.gh-content a { @apply underline text-nord8; }
+
+.kg-bookmark-title { @apply text-nord6 mb-1 font-playfair font-bold }
+.kg-bookmark-description { @apply mb-4 italic text-sm; }
+.kg-bookmark-metadata { @apply flex space-x-2 items-center text-sm; }
+.kg-bookmark-icon { @apply w-8; }
