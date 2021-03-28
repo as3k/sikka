@@ -4,7 +4,7 @@
 
   <header class="gh-header gh-canvas flex flex-col items-center text-center">
     <div class="title-area mb-10 flex flex-col items-center">
-      <h1 class="gh-title font-playfair font-extrabold text-5xl mb-4 text-gray-900 dark:text-offwhite"> {{ title }}
+      <h1 class="gh-title font-playfair font-extrabold text-3xl md:containertext-5xl mb-4 text-gray-900 dark:text-offwhite"> {{ title }}
       </h1>
       <span class="gh-post-meta font-nunito uppercase text-semibold tracking-wide text-xs text-nord3 dark:text-nord4">
         {{ primary_tag.name }} | {{reading_time}}
@@ -13,19 +13,23 @@
 
 
     {{#if feature_image}}
-    <img class="gh-feature-image mb-16" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
+    <img class="gh-feature-image w-full mb-16 shadow-double-drop rounded-lg" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
       size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url feature_image size="xl" }} 2000w"
       sizes="(max-width: 1000px) 1000px, 2000px" loading="lazy" src="{{img_url feature_image size=" xl"}}"
       alt="{{title}}" />
     {{/if}}
 
     {{#if custom_excerpt}}
-    <p class="gh-excerpt text-left font-playfair text-3xl font-extrabold mb-8">{{custom_excerpt}}</p>
+    <div class="excerpt-container grid grid-cols-1 md:grid-cols-6">
+      <p class="gh-excerpt text-left font-playfair text-xl md:text-2xl font-extrabold mb-8 md:col-start-2 md:col-span-4">{{custom_excerpt}}</p>
+    </div>
     {{/if}}
   </header>
 
-  <div class="gh-content gh-canvas">
-    {{content}}
+  <div class="gh-content gh-canvas grid grid-cols-1 md:grid-cols-6">
+    <main class="md:col-start-2 md:col-span-4">
+      {{content}}
+    </main>
   </div>
 
   <footer class="gh-footer gh-canvas">

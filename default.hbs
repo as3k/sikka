@@ -38,9 +38,9 @@
       </div>
       <div class="page-header--right flex items-center">
 
-        <nav class="navigation">
+        <div class="header-nav font-nunito">
           {{ navigation }}
-        </nav>
+        </div>
 
         {{> dark-mode-switch }}
 
@@ -55,10 +55,29 @@
 
     </main>
 
-    <footer class="gh-foot py-8">
-      <div class="gh-container container border-t-2 border-nord4 pt-4">
-        <div class="gh-foot-menu">
-          {{navigation}}
+    <footer class="gh-foot mt-16 py-9 bg-nord00 dark:bg-nord0 text-nord5 text-xs font-semibold font-nunito">
+      <div class="gh-container container">
+        <div class="gh-foot-menu grid grid-cols-1 md:grid-cols-3 text-center gap-2 md:gap-8">
+          <div class="logo text-nord6 flex justify-center sm:hidden">
+
+            <svg class="fill-current w-6" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
+            </svg>
+
+          </div>
+          <div class="copyright">
+            &copy; {{date format="YYYY"}} Zachary Guerrero, ZKG.io.
+          </div>
+          <div class="logo text-nord6 hidden sm:flex sm:justify-center">
+
+            <svg class="fill-current w-6" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
+            </svg>
+
+          </div>
+          <div class="footer-nav sm:flex sm:justify-end"> {{ navigation }} </div>
         </div>
       </div>
     </footer>
