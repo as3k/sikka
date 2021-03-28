@@ -10,7 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Nunito+Sans&family=Playfair+Display:wght@900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{asset " built/style.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "built/style.css"}}" />
 
   <title>{{meta_title}}</title>
 
@@ -19,7 +19,7 @@
 
   <head> --}}
 
-  </head>
+</head>
 
 <body class="{{body_class}} font-merriweather bg-offwhite dark:bg-nord00 text-nord0 dark:text-nord4 leading-8">
   <div class="gh-viewport">
@@ -78,44 +78,15 @@
 
   {{!-- <foot> --}}
 
-    <script src="{{asset " built/jquery-3.4.1.min.js"}}"></script>
+    <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>
       var maxPages = parseInt('{{pagination.pages}}');
     </script>
-    <script src="{{asset " built/infinitescroll.js"}}"></script>
+    <script src="{{asset "built/infinitescroll.js"}}"></script>
     {{/if}}
-
-    <script>
-      let darkmode = localStorage.getItem('darkMode')
-      const darkModeToggle = $('.dark-mode-toggle')
-
-      $(document).ready(function () {
-        function toggleDMIcons() {
-          if ($('html').hasClass('dark')) {
-            $('.sun').show()
-            $('.moon').hide()
-          } else {
-            $('.sun').hide()
-            $('.moon').show()
-          }
-        }
-
-        // Mobile Menu Trigger
-        $('.gh-burger').click(() => {
-          $('body').toggleClass('gh-head-open');
-        });
-
-        toggleDMIcons()
-
-        // Dark Mode Trigger
-        $('.gh-dark-mode').click(() => {
-          $('html').toggleClass('dark')
-          toggleDMIcons()
-        })
-      });
-    </script>
+    <script src="{{asset "built/main.js"}}"></script>
 
     {{#is "post, page"}}
     <script src="{{asset " built/jquery.fitvids.js"}}"></script>
