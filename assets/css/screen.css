@@ -1,4 +1,4 @@
-#ghost-portal-root { @apply hidden; }
+
 
 .dark img {
 
@@ -26,7 +26,7 @@
 .gh-content h2,
 .gh-content h3,
 .gh-content h4 {
-    @apply text-nord0 font-playfair
+    @apply text-nord0 font-playfair;
 }
 
 .gh-content h1 { @apply text-4xl mt-16; }

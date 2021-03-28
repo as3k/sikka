@@ -24,6 +24,15 @@ module.exports = {
             'nord14': '#A3BE8C',
             'nord15': '#B48EAD',
         },
+        fontSize: {
+            'supersize': '16.75rem',
+        },
+        maxWidth: {
+            '960': '960px',
+        },
+        boxShadow: {
+            'double-drop': '0 1px 3px 0 rgb(56 63 82 / 10%), 0 5px 7px 0 rgb(56 63 82 / 15%)'
+        },
     },
     container: {
         center: true,
@@ -32,9 +41,6 @@ module.exports = {
         'playfair': ['Playfair Display', 'serif'],
         'nunito': ['Nunito Sans', 'sans-serif'],
         'merriweather': ['Merriweather', 'serif']
-    },
-    maxWidth: {
-        '960': '960px',
     },
     screens: {
         'xs': '480px',
