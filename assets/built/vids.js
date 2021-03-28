@@ -1,0 +1,2 @@
+var images=document.querySelectorAll(".kg-gallery-image img");console.log(document.querySelector(".gh-content")),images.forEach(function(e){var t=e.closest(".kg-gallery-image"),e=e.attributes.width.value/e.attributes.height.value;t.style.flex=e+" 1 0%"}),$(document).ready(function(){var e=document.querySelector(".gh-content");console.log(e),e.fitVids()});
+//# sourceMappingURL=vids.js.map

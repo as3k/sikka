@@ -35,5 +35,4 @@ darkModeToggle.on('click', () => {
   } else {
     disableDarkMode()
   }
-  console.log(darkMode)
 })

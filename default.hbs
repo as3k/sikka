@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" class="light">
+<html lang="{{@site.locale}}">
 
 <head>
 
@@ -37,7 +37,12 @@
         </a>
       </div>
       <div class="page-header--right flex items-center">
-        <div class="gh-dark-mode dark-mode-toggle  px-4 md:px-6 py-4 text-nord10 dark:text-nord13">
+
+        <nav class="navigation">
+          {{ navigation }}
+        </nav>
+
+        <div class="dark-mode-toggle  px-4 md:px-6 py-4 text-nord10 dark:text-nord13">
           <svg class="sun fill-current w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -47,13 +52,9 @@
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
           </svg>
         </div>
-        <nav class="navigation">
-          {{ navigation }}
-        </nav>
+
       </div>
     </header>
-
-    {{ navigation }}
 
 
     <main class="gh-main container max-w-960 mx-auto">
@@ -68,9 +69,6 @@
         <div class="gh-foot-menu">
           {{navigation}}
         </div>
-        <div class="gh-foot-meta">
-          Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
       </div>
     </footer>
 
@@ -78,7 +76,7 @@
 
   {{!-- <foot> --}}
 
-    <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
+    <script src="{{asset "built/jquery-3.6.0.min.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>
@@ -86,25 +84,14 @@
     </script>
     <script src="{{asset "built/infinitescroll.js"}}"></script>
     {{/if}}
-    <script src="{{asset "built/main.js"}}"></script>
+
 
     {{#is "post, page"}}
-    <script src="{{asset " built/jquery.fitvids.js"}}"></script>
-    <script>
-      var images = document.querySelectorAll('.kg-gallery-image img');
-      images.forEach(function (image) {
-        var container = image.closest('.kg-gallery-image');
-        var width = image.attributes.width.value;
-        var height = image.attributes.height.value;
-        var ratio = width / height;
-        container.style.flex = ratio + ' 1 0%';
-      });
-      $(document).ready(function () {
-        var $postContent = $(".gh-content");
-        $postContent.fitVids();
-      });
-    </script>
+    <script src="{{asset "built/jquery.fitvids.js"}}"></script>
+    <script src="{{asset "built/vids.js"}}"></script>
     {{/is}}
+
+    <script src="{{asset "built/main.js"}}"></script>
 
     {{ghost_foot}}
     {{!-- Outputs important scripts - should always be included before closing body tag --}}
