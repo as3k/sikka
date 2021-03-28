@@ -1,133 +1,143 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}" class="light">
+
 <head>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Nunito+Sans&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset "built/style.css"}}" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Nunito+Sans&family=Playfair+Display:wght@900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{asset " built/style.css"}}" />
 
-    <title>{{meta_title}}</title>
+  <title>{{meta_title}}</title>
 
-    {{ghost_head}}
-    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+  {{ghost_head}}
+  {{!-- Outputs important meta data and settings, should always be in
 
-</head>
+  <head> --}}
+
+  </head>
+
 <body class="{{body_class}} font-merriweather bg-offwhite dark:bg-nord00 text-nord0 dark:text-nord4 leading-8">
-<div class="gh-viewport">
+  <div class="gh-viewport">
 
 
-<header id="gh-head" class="gh-head flex justify-between items-stretch mb-16 md:mb-24">
-    <div class="page-header--left">
+    <header id="gh-head" class="gh-head flex justify-between items-stretch mb-16 md:mb-24">
+      <div class="page-header--left">
         <a href="{{ @site.url }}" title="{{ @site.title }}" class="gh-head-logo">
-            <div class="logobox bg-nord0 dark:bg-nord6 p-4 text-nord6 dark:text-nord10">
-                <svg class="fill-current w-6 md:w-10" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
-                </svg>
-            </div>
+          <div class="logobox bg-nord0 dark:bg-nord6 p-4 text-nord6 dark:text-nord10">
+            <svg class="fill-current w-6 md:w-10" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
+            </svg>
+          </div>
         </a>
-    </div>
-    <div class="page-header--right flex items-center">
+      </div>
+      <div class="page-header--right flex items-center">
         <div class="gh-dark-mode dark-mode-toggle  px-4 md:px-6 py-4 text-nord10 dark:text-nord13">
-            <svg class="sun fill-current w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-            <svg class="moon fill-current w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
+          <svg class="sun fill-current w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg class="moon fill-current w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+          </svg>
         </div>
         <nav class="navigation">
-            {{ navigation }}
+          {{ navigation }}
         </nav>
-    </div>
-</header>
+      </div>
+    </header>
 
-{{ navigation }}
+    {{ navigation }}
 
 
-<main class="gh-main container max-w-960 mx-auto">
+    <main class="gh-main container max-w-960 mx-auto">
 
-    {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+      {{{body}}}
+      {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
-</main>
+    </main>
 
-<footer class="gh-foot py-8">
-    <div class="gh-container container border-t-2 border-nord4 pt-4">
+    <footer class="gh-foot py-8">
+      <div class="gh-container container border-t-2 border-nord4 pt-4">
         <div class="gh-foot-menu">
-            {{navigation}}
+          {{navigation}}
         </div>
         <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+          Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-</div>
+  </div>
 
-{{!-- <foot> --}}
+  {{!-- <foot> --}}
 
-<script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
+    <script src="{{asset " built/jquery-3.4.1.min.js"}}"></script>
 
-{{#if pagination.pages}}
-<script>
-    var maxPages = parseInt('{{pagination.pages}}');
-</script>
-<script src="{{asset "built/infinitescroll.js"}}"></script>
-{{/if}}
+    {{#if pagination.pages}}
+    <script>
+      var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+    <script src="{{asset " built/infinitescroll.js"}}"></script>
+    {{/if}}
 
-<script>
-let darkmode = localStorage.getItem('darkMode')
-const darkModeToggle = $('.dark-mode-toggle')
+    <script>
+      let darkmode = localStorage.getItem('darkMode')
+      const darkModeToggle = $('.dark-mode-toggle')
 
-$(document).ready(function () {
-    function toggleDMIcons() {
-        if ( $('html').hasClass('dark') ) {
+      $(document).ready(function () {
+        function toggleDMIcons() {
+          if ($('html').hasClass('dark')) {
             $('.sun').show()
             $('.moon').hide()
-        } else {
+          } else {
             $('.sun').hide()
             $('.moon').show()
+          }
         }
-    }
 
-    // Mobile Menu Trigger
-    $('.gh-burger').click(() => {
-        $('body').toggleClass('gh-head-open');
-    });
+        // Mobile Menu Trigger
+        $('.gh-burger').click(() => {
+          $('body').toggleClass('gh-head-open');
+        });
 
-    toggleDMIcons()
-
-    // Dark Mode Trigger
-    $('.gh-dark-mode').click(() => {
-        $('html').toggleClass('dark')
         toggleDMIcons()
-    })
-});
-</script>
 
-{{#is "post, page"}}
-<script src="{{asset "built/jquery.fitvids.js"}}"></script>
-<script>
-var images = document.querySelectorAll('.kg-gallery-image img');
-images.forEach(function (image) {
-    var container = image.closest('.kg-gallery-image');
-    var width = image.attributes.width.value;
-    var height = image.attributes.height.value;
-    var ratio = width / height;
-    container.style.flex = ratio + ' 1 0%';
-});
-$(document).ready(function () {
-    var $postContent = $(".gh-content");
-    $postContent.fitVids();
-});
-</script>
-{{/is}}
+        // Dark Mode Trigger
+        $('.gh-dark-mode').click(() => {
+          $('html').toggleClass('dark')
+          toggleDMIcons()
+        })
+      });
+    </script>
 
-{{ghost_foot}}
-{{!-- Outputs important scripts - should always be included before closing body tag --}}
+    {{#is "post, page"}}
+    <script src="{{asset " built/jquery.fitvids.js"}}"></script>
+    <script>
+      var images = document.querySelectorAll('.kg-gallery-image img');
+      images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+      });
+      $(document).ready(function () {
+        var $postContent = $(".gh-content");
+        $postContent.fitVids();
+      });
+    </script>
+    {{/is}}
+
+    {{ghost_foot}}
+    {{!-- Outputs important scripts - should always be included before closing body tag --}}
 
 </body>
+
 </html>
