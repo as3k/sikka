@@ -17,8 +17,8 @@
 .dark .gh-content hr { @apply border-nord6 mx-24 }
 .gh-strong { @apply mb-2 font-bold; }
 
-.gh-content > :not(.kg-image-card) { @apply md:px-24; }
-.gh-excerpt { @apply md:px-24; }
+.gh-content > :not(.kg-image-card) { @apply md:mx-24; }
+.gh-excerpt { @apply md:mx-24; }
 
 .gh-content > * { @apply mb-8; }
 
@@ -42,6 +42,7 @@
 }
 
 .gh-content figcaption { @apply mt-4 pl-4 text-sm italic border-l-2 border-nord7; }
+.gh-content blockquote { @apply border-l-4 border-nord10 pl-8; }
 
 .gh-content code { display: inherit; }
 .gh-content pre,
