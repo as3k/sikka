@@ -3,8 +3,14 @@
 <article class="gh-article {{post_class}}">
 
   <header class="gh-header gh-canvas flex flex-col items-center text-center">
-    <div class="title-area mb-10 flex flex-col items-center">
-      <h1 class="gh-title font-playfair font-extrabold text-3xl md:containertext-5xl mb-4 text-gray-900 dark:text-offwhite"> {{ title }}
+    <div class="title-area mb-10 flex flex-col items-center text-gray-900 dark:text-offwhite">
+      <div class="logo mb-8">
+        <svg class="fill-current w-6 md:w-10" viewBox="0 0 72 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M34.5381 0L0 20.6497V31.6142L24.6701 16.8122V19.9188L0 34.7208V61.0355L34.5381 40.3858V28.9828L10.0508 43.6751V40.5685L34.5381 25.8762V0ZM37.4619 0L72 20.6497V32.0528L46.599 16.8122V19.0051V34.9036L61.6751 43.8579V40.8427L49.5228 33.5513V21.6731L72 35.1594V61.0355L37.4619 40.3858V0Z" />
+        </svg>
+      </div>
+      <h1 class="gh-title font-playfair font-extrabold text-3xl md:containertext-5xl mb-4"> {{ title }}
       </h1>
       <span class="gh-post-meta font-nunito uppercase text-semibold tracking-wide text-xs text-nord3 dark:text-nord4">
         {{ primary_tag.name }} | {{reading_time}}
